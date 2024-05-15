@@ -1,0 +1,30 @@
+JavaScript
+
+const { ref, inView } = useInView({
+  threshold: 0.5,
+  rootMargin: "100px",
+});
+
+const text = (
+  <motion.h1
+    ref={ref}
+    initial={{
+      transform: `translate3d(100%, 0, 0)`,
+      opacity: 0,
+    }}
+    animate={{
+      transform: `translate3d(0, 0, 0)`,
+      opacity: 1,
+    }}
+    transition={{ duration: 1 }}
+  >
+    Hola mundo!
+  </motion.h1>
+);
+
+if (inView) {
+  // El texto está visible en la pantalla
+} else {
+  // El texto no está visible en la pantalla
+}
+
